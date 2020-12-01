@@ -22,7 +22,7 @@ input.each do |e|
                 #epochEnd = DateTime.now.strftime('%Q').to_i
                 epochEnd = Time.now.to_f 
                 duration = epochEnd - epochStart
-                printf "The answer: #{e * x * z}. Duration: #{duration} ms\n"
+                printf "The answer: #{e * x * z}. Duration: #{duration*1000} ms\n"
                 exit
             end
         end

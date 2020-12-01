@@ -5,6 +5,8 @@ require 'date'
 epochStart = Time.now.to_f 
 input = IO.readlines("input.txt")
 
+puts "#{epochStart}"
+
 # Functions
 def summed2020?(x,y)
     return true if x + y == 2020
@@ -18,7 +20,7 @@ input.each do |e|
         if summed2020?(e,x)
             epochEnd = Time.now.to_f 
             duration = epochEnd - epochStart
-            printf "The answer: #{e * x}. Duration: #{duration} ms\n"
+            printf "The answer: #{e * x}. .Duration: #{duration*1000} ms\n"
             exit
         end
     end
