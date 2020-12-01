@@ -1,3 +1,6 @@
+---------------
+-- Variables --
+---------------
 
 -- Input the file into a table
 local file = io.open("input.txt", "r");
@@ -5,6 +8,8 @@ local arr = {}
 for line in file:lines() do
    table.insert (arr, line);
 end
+
+local sMilli = os.clock()
 
 ---------------
 -- Functions --
@@ -23,7 +28,8 @@ for i, x in pairs(arr) do
     for i, y in pairs(arr) do
         y = tonumber(y)
         if summed2020(x,y) == true then
-            print("The answer is: "..x*y)
+            local eMilli = os.clock()
+            print("The answer is: "..x*y..". Duration: "..eMilli - sMilli)
             os.exit()
         end
     end
